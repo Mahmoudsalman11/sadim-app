@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuthStore } from '../stores/authStore'
 import { getSmartAdvice } from '../lib/ai'
+// 1. استدعاء مكون غرفة الهاكر الجديد
+import HackerRoom from '../components/HackerRoom'
 import { Target, CheckSquare, Clock, TrendingUp, Sparkles, ArrowLeft, Zap, Brain } from 'lucide-react'
 import { format } from 'date-fns'
 import { ar } from 'date-fns/locale'
@@ -28,7 +30,6 @@ function StatCard({ icon:Icon, label, value, color, sub }) {
       </div>
       <p style={{ fontSize:26, fontWeight:700, color:'var(--text-primary)', margin:'0 0 4px', fontFamily:'var(--font-mono)' }}>{value}</p>
       <p style={{ fontSize:11, color:'var(--text-muted)', margin:0 }}>{label}</p>
-      {/* Color accent line */}
       <div style={{ position:'absolute', bottom:0, right:0, left:0, height:2, background:`linear-gradient(90deg, ${color}00, ${color}88)` }} />
     </div>
   )
@@ -92,6 +93,11 @@ export default function Dashboard() {
         </h1>
       </div>
 
+      {/* 2. إضافة غرفة الهاكر هنا لتظهر في القمة */}
+      <div style={{ marginBottom: 24 }}>
+        <HackerRoom user={user} />
+      </div>
+
       {/* Stats */}
       <div className="stagger" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14, marginBottom:28 }}>
         <StatCard icon={Target}      label="أهداف نشطة"  value={data.goals.length}               color="var(--gold)"   />
@@ -108,7 +114,7 @@ export default function Dashboard() {
             <div style={{ width:28, height:28, borderRadius:8, background:'rgba(240,165,0,0.15)', display:'flex', alignItems:'center', justifyContent:'center' }}>
               <Sparkles size={13} color="var(--gold)" />
             </div>
-            <span style={{ fontSize:12, fontWeight:600, color:'var(--gold)' }}>نصيحة سديم</span>
+            <span style={{ fontSize:12, fontWeight:600, color:'var(--gold)' }}>نصيحة سَدِيم</span>
           </div>
           {advice
             ? <p style={{ fontSize:13, color:'var(--text-secondary)', margin:0, lineHeight:1.75 }}>{advice}</p>
@@ -222,9 +228,9 @@ export default function Dashboard() {
       {/* Quick nav cards */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14, marginTop:20 }}>
         {[
-          { to:'/focus',        icon:Zap,     label:'وضع التركيز',   color:'var(--gold)',   sub:'ابدأ بومودورو' },
-          { to:'/smart-planner',icon:Brain,   label:'المخطط الذكي', color:'var(--purple)', sub:'AI يخطط ليومك' },
-          { to:'/chat',         icon:Sparkles,label:'سديم AI',       color:'var(--green)',  sub:'اسأل مساعدك' },
+          { to:'/focus',        icon:Zap,      label:'وضع التركيز',   color:'var(--gold)',   sub:'ابدأ بومودورو' },
+          { to:'/smart-planner',icon:Brain,    label:'المخطط الذكي', color:'var(--purple)', sub:'AI يخطط ليومك' },
+          { to:'/chat',         icon:Sparkles, label:' سَدِيم AI ',       color:'var(--green)',  sub:'اسأل مساعدك' },
         ].map(({ to, icon:Icon, label, color, sub }) => (
           <Link key={to} to={to} style={{ textDecoration:'none' }}>
             <div style={{

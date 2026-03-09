@@ -49,7 +49,7 @@ export default function Auth() {
           }}>
             <Sparkles size={24} color="#07091a" />
           </div>
-          <h1 style={{ fontSize:28, fontWeight:800, color:'var(--text-primary)', margin:'0 0 6px', fontFamily:'var(--font-display)' }}>ساديم</h1>
+          <h1 style={{ fontSize:28, fontWeight:800, color:'var(--text-primary)', margin:'0 0 6px', fontFamily:'var(--font-display)' }}>سَدِيم</h1>
           <p style={{ fontSize:13, color:'var(--text-muted)', margin:0 }}>مساعدك الذكي للإنتاجية</p>
         </div>
 
@@ -113,7 +113,7 @@ export default function Auth() {
         </div>
 
         <p style={{ textAlign:'center', fontSize:12, color:'var(--text-muted)', marginTop:20 }}>
-          منصة ساديم للإنتاجية الذكية 🚀
+          منصة سَدِيم للإنتاجية الذكية 🚀
         </p>
       </div>
     </div>

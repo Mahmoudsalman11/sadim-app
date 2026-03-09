@@ -12,7 +12,7 @@ const NAV = [
     { to:'/',            icon:LayoutDashboard, label:'الرئيسية' },
     { to:'/briefing',    icon:Sun,             label:'ملخص اليوم' },
     { to:'/focus-score', icon:Zap,             label:'نقطة التركيز' },
-    { to:'/chat',        icon:MessageCircle,   label:'سديم AI 💬' },
+    { to:'/chat',        icon:MessageCircle,   label:'سَدِيم AI 💬' },
   ]},
   { label:'التخطيط', items:[
     { to:'/smart-planner', icon:Brain,       label:'المخطط الذكي' },
@@ -71,7 +71,7 @@ export default function Layout() {
               <Sparkles size={16} color="#07091a" />
             </div>
             <div>
-              <p style={{ fontSize:16, fontWeight:700, color:'var(--text-primary)', margin:0, lineHeight:1 }}>ساديم</p>
+              <p style={{ fontSize:16, fontWeight:700, color:'var(--text-primary)', margin:0, lineHeight:1 }}>سَدِيم</p>
               <p style={{ fontSize:9, color:'var(--gold)', margin:0, opacity:0.8, letterSpacing:'0.05em' }}>SADIM</p>
             </div>
           </div>
